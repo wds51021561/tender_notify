@@ -6,7 +6,7 @@ import com.yy.common.entity.base.CommonResp;
 import com.yy.common.entity.ms.notice.SysStaff;
 import com.yy.common.inter.api.ms.notice.SysStaffApi;
 import com.yy.common.inter.sys.ICache;
-import jakarta.annotation.Resource;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,15 +16,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("login")
+@RequiredArgsConstructor
 public class LoginController {
 
-    @Resource
-    private ICache iCache;
 
-    @Resource
-    private SysStaffApi sysStaffApi;
+    private final ICache iCache;
 
-
+    private final SysStaffApi sysStaffApi;
 
 
     @RequestMapping("staffInfo")
