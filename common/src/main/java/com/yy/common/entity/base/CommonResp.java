@@ -8,24 +8,26 @@ import lombok.Setter;
 public class CommonResp<T> extends BaseResp {
     private T data;
 
-    public CommonResp<T>  success(String message,T data){
-        this.code = "SUCCESS";
-        this.message = message;
-        this.data = data;
-        return this;
+    public static <T> CommonResp<T>  success(String message,T data){
+        CommonResp<T> resp = new CommonResp<>();
+        resp.code = "SUCCESS";
+        resp.message = message;
+        resp.data = data;
+        return resp;
     }
 
-    public CommonResp<T>  fail(String code ,String message){
-        this.code = code;
-        this.message = message;
-        return this;
+    public static <T> CommonResp<T>  fail(String code ,String message){
+        CommonResp<T> resp = new CommonResp<>();
+        resp.code = code;
+        resp.message = message;
+        return resp;
     }
 
-    public CommonResp<T>  success(T data){
+    public static <T> CommonResp<T>  success(T data){
         return success("操作成功",data);
     }
 
-    public CommonResp<T>  success(String message){
+    public static <T> CommonResp<T>  success(String message){
         return success(message,null);
     }
 

@@ -29,15 +29,14 @@ public class LoginController {
 
     @RequestMapping("staffInfo")
     public CommonResp<List<SysStaff>> staffInfo(@RequestBody CommonReq<String> req) {
-        CommonResp<List<SysStaff>> resp = new CommonResp<>();
         SysStaff sysStaff = new SysStaff();
         sysStaff.setCode(req.getData());
         List<SysStaff> byCodeList = sysStaffApi.getByCodeList(sysStaff);
-        return resp.success(byCodeList);
+        return CommonResp.success(byCodeList);
     }
 
     @RequestMapping("initStaff")
-    public SysStaff initStaff(@RequestParam("code") String code) {
+    public CommonResp<SysStaff> initStaff(@RequestParam("code") String code) {
         SysStaff sysStaff = new SysStaff();
         sysStaff.setCode("123");
         sysStaff.setId(1L);
@@ -45,7 +44,7 @@ public class LoginController {
         sysStaff.setState("E");
         sysStaff.init();
         sysStaffApi.insert(sysStaff);
-        return sysStaff;
+        return CommonResp.success(sysStaff);
     }
 
 }
