@@ -5,7 +5,11 @@ import com.yy.common.entity.ms.notice.SysStaff;
 import com.yy.common.inter.api.ms.notice.SysStaffApi;
 import com.yy.ms.dao.notice.mapper.SysStaffMapper;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.context.annotation.Primary;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -19,6 +23,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/ms/notice/sysStaff")
+@Primary
 public class SysStaffApiImpl implements SysStaffApi {
 
     @Resource

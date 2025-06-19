@@ -7,7 +7,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @SpringBootApplication
 @EnableAspectJAutoProxy
-//@EnableFeignClients
+@EnableFeignClients
 public class WebStart {
 
     public static void main(String[] args) {

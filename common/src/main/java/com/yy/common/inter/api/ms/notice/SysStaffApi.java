@@ -2,14 +2,12 @@ package com.yy.common.inter.api.ms.notice;
 
 import com.yy.common.entity.ms.notice.SysStaff;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.context.annotation.Primary;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient(url = "${feign.ms.url:localhost:55555}" ,name = "msApi",path = "/ms/notice/sysStaff")
-//@Primary
+@FeignClient(url = "${feign.ms.url:localhost:55555}" ,primary = false,name = "msApi",path = "/ms/notice/sysStaff")
 public interface SysStaffApi {
 
     @PostMapping("/getByCode")

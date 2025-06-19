@@ -7,7 +7,10 @@ import com.yy.common.entity.ms.notice.SysStaff;
 import com.yy.common.inter.api.ms.notice.SysStaffApi;
 import com.yy.common.inter.sys.ICache;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -16,10 +19,13 @@ import java.util.List;
 public class LoginController {
 
     @Resource
-    private ICache cacheVService;
+    private ICache iCache;
 
     @Resource
     private SysStaffApi sysStaffApi;
+
+
+
 
     @RequestMapping("staffInfo")
     public CommonResp<List<SysStaff>> staffInfo(@RequestBody CommonReq<String> req) {
