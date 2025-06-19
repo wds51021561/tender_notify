@@ -19,6 +19,13 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    <modules>
+        <module>common</module>
+        <module>web</module>
+        <module>ms</module>
+        <module>task</module>
+        <module>web-app</module>
+    </modules>
 
     <dependencyManagement>
         <dependencies>
