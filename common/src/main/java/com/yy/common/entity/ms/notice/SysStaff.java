@@ -1,6 +1,5 @@
 package com.yy.common.entity.ms.notice;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import com.yy.common.entity.base.BaseMsEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -19,7 +18,6 @@ import java.io.Serializable;
  */
 @Getter
 @Setter
-@TableName("sys_staff")
 @ApiModel(value = "SysStaff对象", description = "")
 public class SysStaff extends BaseMsEntity implements Serializable {
 

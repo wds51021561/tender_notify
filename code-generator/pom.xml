@@ -8,7 +8,7 @@
   <version>1.0.0</version>
   <packaging>jar</packaging>
 
-  <name>代码生成器</name>
+  <name>code-generator</name>
 
 
   <properties>
@@ -161,6 +161,17 @@
       <groupId>org.thymeleaf</groupId>
       <artifactId>thymeleaf</artifactId>
       <version>3.1.2.RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.mybatis-flex</groupId>
+      <artifactId>mybatis-flex-codegen</artifactId>
+      <version>1.10.9</version>
+    </dependency>
+    <dependency>
+      <groupId>com.zaxxer</groupId>
+      <artifactId>HikariCP</artifactId>
+      <version>4.0.3</version>
     </dependency>
   </dependencies>
 

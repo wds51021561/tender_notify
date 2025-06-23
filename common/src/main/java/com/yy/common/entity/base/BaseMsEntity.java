@@ -12,7 +12,7 @@ public abstract class BaseMsEntity {
     /**
      * 逻辑状态
      */
-    @ApiModelProperty("账号姓名")
+    @ApiModelProperty("逻辑状态")
     private String state = "E";
 
     /**

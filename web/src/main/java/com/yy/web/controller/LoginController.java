@@ -1,6 +1,7 @@
 package com.yy.web.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.yy.common.entity.base.CommonReq;
 import com.yy.common.entity.base.CommonResp;
 import com.yy.common.entity.ms.notice.SysStaff;
@@ -29,7 +30,8 @@ public class LoginController {
     public CommonResp<List<SysStaff>> staffInfo(@RequestBody CommonReq<String> req) {
         SysStaff sysStaff = new SysStaff();
         sysStaff.setCode(req.getData());
-        List<SysStaff> byCodeList = sysStaffApi.getByCodeList(sysStaff);
+        LambdaQueryWrapper<SysStaff> wrapper = new LambdaQueryWrapper<>(sysStaff);
+        List<SysStaff> byCodeList = sysStaffApi.getByCodeList(wrapper);
         return CommonResp.success(byCodeList);
     }
 

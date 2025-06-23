@@ -38,8 +38,7 @@ public class SysStaffApiImpl implements SysStaffApi {
 
     @Override
     @PostMapping("getByCodeList")
-    public List<SysStaff> getByCodeList(@RequestBody SysStaff sysStaff) {
-        LambdaQueryWrapper<SysStaff> wrapper = new LambdaQueryWrapper<>(sysStaff);
+    public List<SysStaff> getByCodeList(@RequestBody LambdaQueryWrapper<SysStaff> wrapper) {
         return sysStaffMapper.selectList(wrapper);
     }
 

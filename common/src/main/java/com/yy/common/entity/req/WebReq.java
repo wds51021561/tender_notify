@@ -5,13 +5,13 @@ import com.yy.common.util.UuidUtil;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
 public class WebReq extends BaseReq {
     public WebReq(){
         this.reqUuid = UuidUtil.getUuid();
-        this.reqTime = new Date();
+        this.reqTime = LocalDateTime.now();
     }
 }
